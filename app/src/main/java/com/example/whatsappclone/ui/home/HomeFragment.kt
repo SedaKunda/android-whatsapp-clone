@@ -54,6 +54,6 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun initialTab(): TabLayout.Tab {
-        return tabs.getTabAt(1)!!
+        return tabs.getTabAt(2)!!
     }
 }
