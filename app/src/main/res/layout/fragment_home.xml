@@ -7,10 +7,7 @@
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
-
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/toolbar"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/colorPrimary"
@@ -28,10 +25,7 @@
         app:tabSelectedTextColor="@color/tab_active"
         app:tabIndicatorColor="@color/tab_active"
         app:tabIconTint="@color/tab_inactive"
-
         app:layout_constraintTop_toBottomOf="@+id/toolbar"
-
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -41,16 +35,17 @@
             android:layout_width="wrap_content" />
         <com.google.android.material.tabs.TabItem
             android:id="@+id/chat_tab"
-            android:text="CHATS"            android:layout_height="wrap_content"
+            android:text="@string/chats"
+            android:layout_height="wrap_content"
             android:layout_width="wrap_content"/>
         <com.google.android.material.tabs.TabItem
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="STATUS"/>
+            android:text="@string/status"/>
         <com.google.android.material.tabs.TabItem
             android:layout_height="wrap_content"
             android:layout_width="wrap_content"
-            android:text="CALLS"/>
+            android:text="@string/calls"/>
 
     </com.google.android.material.tabs.TabLayout>
 
@@ -62,7 +57,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_weight="1" />
 
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/floating_action_button"
         android:layout_width="wrap_content"
@@ -72,7 +66,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:tint="@color/white"
-
         app:srcCompat="@drawable/ic_message_black_24dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
