@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.drawable.DrawableCompat
 import androidx.fragment.app.Fragment
 import com.example.whatsappclone.R
 import com.example.whatsappclone.ui.core.TAB_TITLES
@@ -28,17 +29,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val activity : AppCompatActivity = activity as AppCompatActivity
         activity.setSupportActionBar(toolbar)
         setupViewPager2(initialTab())
-
-        // handle tint for the camera icon
-//        val colors = resources.getColorStateList(R.color.tab_icon, activity.theme)
-//        for (i in 0 until tabs.tabCount) {
-//            val tab: TabLayout.Tab = tabs.getTabAt(i)!!
-//            var icon = tab.icon
-//            if (icon != null) {
-//                icon = DrawableCompat.wrap(icon)
-//                DrawableCompat.setTintList(icon, colors)
-//            }
-//        }
+        greyCameraIconWhenNotActive(activity)
     }
 
     private fun setupViewPager2(initialTab: TabLayout.Tab) {
@@ -55,5 +46,17 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     private fun initialTab(): TabLayout.Tab {
         return tabs.getTabAt(2)!!
+    }
+
+    private fun greyCameraIconWhenNotActive(activity: AppCompatActivity) {
+        val colors = resources.getColorStateList(R.color.tab_icon, activity.theme)
+        for (i in 0 until tabs.tabCount) {
+            val tab: TabLayout.Tab = tabs.getTabAt(i)!!
+            var icon = tab.icon
+            if (icon != null) {
+                icon = DrawableCompat.wrap(icon)
+                DrawableCompat.setTintList(icon, colors)
+            }
+        }
     }
 }
